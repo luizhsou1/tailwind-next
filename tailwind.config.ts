@@ -1,14 +1,14 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss'
 
 const config: Config = {
   content: ['./src/**/*.tsx'],
   theme: {
     extend: {
       colors: {
-        luiz: '#8257e6'
-      }
+        luiz: '#8257e6',
+      },
     },
   },
   plugins: [],
-};
-export default config;
+}
+export default config

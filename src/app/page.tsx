@@ -1,4 +1,10 @@
-import { Input, InputControl, InputPrefix } from '@/components/Input'
+import {
+  FileInput,
+  FileInputControl,
+  FileInputImagePreview,
+  FileInputTrigger,
+} from '@/components/Form/FileInput'
+import { Input, InputControl, InputPrefix } from '@/components/Form/Input'
 import { SettingsTabs } from '@/components/SettingsTabs'
 import { Mail, UploadCloud, User } from 'lucide-react'
 
@@ -84,32 +90,11 @@ export default function Home() {
                 This will be displayed on your profile.
               </span>
             </label>
-            <div className="flex items-start gap-5">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-violet-50">
-                <User className="h-8 w-8 text-violet-500"></User>
-              </div>
-              <label
-                htmlFor="photo"
-                className="hover:bg-violet-25 group flex flex-1 cursor-pointer flex-col items-center gap-3 rounded-lg border border-zinc-300 px-6 py-4 text-center text-zinc-500 shadow-sm hover:border-violet-200 hover:text-violet-500"
-              >
-                <div className="border-6 rounded-full border-zinc-50 bg-zinc-100 p-2 group-hover:border-violet-50 group-hover:bg-violet-100">
-                  <UploadCloud className="h-5 w-5 text-zinc-600 group-hover:text-violet-600"></UploadCloud>
-                </div>
-
-                <div className="flex flex-col items-center gap-1">
-                  <span className="text-sm">
-                    <span className="font-semibold text-violet-700">
-                      Click to Upload
-                    </span>{' '}
-                    or drag and drop
-                  </span>
-                  <span className="text-xs">
-                    SVG, PNG, JPG or GIF (max. 800x400px)
-                  </span>
-                </div>
-              </label>
-              <input type="file" className="sr-only" id="photo" />
-            </div>
+            <FileInput className="flex items-start gap-5">
+              <FileInputImagePreview />
+              <FileInputTrigger />
+              <FileInputControl />
+            </FileInput>
           </div>
 
           <div className="grid-cols-form grid gap-3 pt-5">
@@ -161,7 +146,10 @@ export default function Home() {
                 Share a few snippets of your work.
               </span>
             </label>
-            <div></div>
+            <FileInput>
+              <FileInputTrigger />
+              <FileInputControl multiple />
+            </FileInput>
           </div>
 
           <div className="flex items-center justify-end gap-2 pt-5">

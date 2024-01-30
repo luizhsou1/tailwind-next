@@ -43,4 +43,5 @@ export const useFileInput = () => useContext(FileInputContext)
 export * from './Control'
 export * from './ImagePreview'
 export * from './List'
+export * from './Item'
 export * from './Trigger'
